@@ -1,0 +1,15 @@
+{
+  "name": "curso-ecmascript-2022",
+  "version": "1.0.0",
+  "description": "Curso de ECMAScript 6 y sus versiones posteriores.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "ECMAScript"
+  ],
+  "author": "Felipe Muñoz <analista.felipe.m@gmail.com>",
+  "license": "MIT"
+}
