@@ -1,10 +1,12 @@
 /**
- * ECMAScript 6
- * Lanzado en junio de 2015.
+ * CLASE 4: ES6: let y const, y arrow functions
+ * 
+ * ECMAScript 6 fue lanzado en junio de 2015.
  */
 
-/* CLASE 4: ES6: let y const, y arrow functions */
-/* Variables en JavaScript */
+/**
+ * Variables en JavaScript
+ */
 
 // NOTA: para ejecutar el codigo, seleccionar la porcion de codigo, clic derecho, y en el menu seleccionar "Run code".
 

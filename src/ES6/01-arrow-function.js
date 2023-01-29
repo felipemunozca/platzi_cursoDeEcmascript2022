@@ -1,9 +1,10 @@
 /**
+ * CLASE 4: ES6: let y const, y arrow functions
+ * 
  * Arrow function (Funcion flecha)
- * 
  * Una expresión de función flecha es una alternativa compacta a una expresión de función tradicional, pero es limitada y no se puede utilizar en todas las situaciones.
- * DOCUMENTACION: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions
  * 
+ * DOCUMENTACION OFICIAL: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions
  */
 
 // Creo una funcion tradicional
