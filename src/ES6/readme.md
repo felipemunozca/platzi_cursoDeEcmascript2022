@@ -1,6 +1,16 @@
 # Resumen de cada clase
 
-## ES6: let y const, y arrow functions [4/35]
+## Índice
+[ES6: let y const, y arrow functions](#id1)
+[ES6: strings](#id2)
+[ES6: parámetros por defecto](#id3)
+[ES6: asignación de desestructuración](#id4)
+[ES6: spread operator](#id5)
+[ES6: object literals](#id6)
+
+------------
+
+## ES6: let y const, y arrow functions [4/35]<a name="id1"></a>
 En ECMAScript 6 (ES6 o ES2015) fueron publicadas varias características nuevas que dotaron de gran poder al lenguaje, dos de estas son una nueva forma de declaración de variables con let y const, y funciones flechas.
 
 ### La nueva forma para declarar variables con let y const
@@ -138,7 +148,7 @@ const suma = (num1, num2) => (
 
 ------------
 
-## ES6: strings [5/35]
+## ES6: strings [5/35]<a name="id2"></a>
 Las plantillas literales (template literals) consisten en crear cadenas de caracteres que puedan contener variables sin utilizar la concatenación. Esto mejora la legibilidad y la mantenibilidad del código.
 
 ### Concatenación de caracteres
@@ -187,7 +197,7 @@ console.log(mensaje)
 
 ------------
 
-## ES6: parámetros por defecto [6/35]
+## ES6: parámetros por defecto [6/35]<a name="id3"></a>
 Los parámetros por defecto (default params) consisten en establecer un valor por defecto a los parámetros de una función, para asegurar que el código se ejecute correctamente en el caso de que no se establezcan los argumentos correspondientes en la invocación de la función.
 
 ### Cómo era utilizar valores por defecto antes de ES6
@@ -241,7 +251,7 @@ sumar(3)   // number1 = 3 y number2 = 0
 
 ------------
 
-## ES6: asignación de desestructuración [7/35]
+## ES6: asignación de desestructuración [7/35]<a name="id4"></a>
 
 La desestructuración (destructuring) consiste en extraer los valores de arrays o propiedades de objetos en distintas variables.
 
@@ -358,7 +368,7 @@ console.log(cinco) // 5
 
 ------------
 
-## ES6: spread operator [8/35]
+## ES6: spread operator [8/35]<a name="id5"></a>
 
 El operador de propagación (spread operator), como su nombre lo dice, consiste en propagar los elementos de un iterable, ya sea un array o string utilizando tres puntos (...) dentro de un array.
 ```javascript
@@ -466,4 +476,45 @@ function hola (primero, segundo, ...resto) { // <- Parámetro Rest
 
 hola(...array, "final") //<- Operador de propagación
 //Lo mismo que hacer -> hola(1,2,3,4,5, "final")
+```
+
+------------
+
+## ES6: object literals [10/35]<a name="id6"></a>
+
+Los objetos literales consiste en crear objetos a partir de variables sin repetir el nombre. Antes de ES6, para crear un objeto a partir de variables consistía en la siguiente manera:
+```javascript
+const nombre = "Andres"
+const edad = 23
+
+const objeto = {
+    nombre: nombre, 
+    edad: edad
+}
+
+objeto // { nombre: 'Andres', edad: 23 }
+```
+### Cómo utilizar objetos literales
+Con los parámetros de objeto puedes obviar la repetición de nombres, JavaScript creará la propiedad a partir del nombre de la variable con su respectivo valor.
+```javascript
+const nombre = "Andres"
+const edad = 23
+
+const objeto = {nombre, edad}
+
+objeto // { nombre: 'Andres', edad: 23 }
+```
+El resultado es el mismo, pero sin la necesidad de repetir palabras. Puedes combinarlo con variables que su propiedad tiene un nombre diferente.
+```javascript
+const nombre = "Andres"
+const edad = 23
+const esteEsUnID = 1
+
+const objeto = {
+    nombre, 
+    edad,
+    id: esteEsUnID
+}
+
+objeto // { nombre: 'Andres', edad: 23, id: 1 }
 ```
