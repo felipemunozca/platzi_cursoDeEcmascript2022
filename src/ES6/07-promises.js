@@ -7,47 +7,51 @@
  * 
  */
 
+/**** EJEMPLO 1 ****/
 
-// crear una nueva funcion utilizando arrow function.
-// La promesa se declara utilizando la palabra reservada Promise() y dentro tendra una funcion anonima que recibira dos parametros: resolve y reject.
-// Estas palabras son estandares por lo que se recomienda utilizar las mimas, para que luego cualquier persona que lea mi codigo, entienda la intencion de lo que hace el codigo.
-const anotherFunction = () => {
-    return new Promise((resolve, reject) => {
-        if (true) {
-            resolve("La promesa se cumplio.");
-        } else {
-            reject("La promesa fallo.");
-        }
-    })
-}
+    // crear una nueva funcion utilizando arrow function.
+    // La promesa se declara utilizando la palabra reservada Promise() y dentro tendra una funcion anonima que recibira dos parametros: resolve y reject.
+    // Estas palabras son estandares por lo que se recomienda utilizar las mimas, para que luego cualquier persona que lea mi codigo, entienda la intencion de lo que hace el codigo.
+    const anotherFunction = () => {
+        return new Promise((resolve, reject) => {
+            if (true) {
+                resolve("La promesa se cumplio.");
+            } else {
+                reject("La promesa fallo.");
+            }
+        })
+    }
 
-// Declaro la funcion y utilizo dos nuevos metodos:
-// el metodo then() para retornar una respuesta.
-// el metodo catch() para capturar el error.
-anotherFunction()
-    .then(response => console.log(response))
-    .catch(err => console.log(err))
+    // Declaro la funcion y utilizo dos nuevos metodos:
+    // el metodo then() para retornar una respuesta.
+    // el metodo catch() para capturar el error.
+    anotherFunction()
+        .then(response => console.log(response))
+        .catch(err => console.log(err))
 
-// Si selecciono el codigo y lo ejecuto con Run code, la respuesta en la consola sera:
-// La promesa se cumplio.
+    // Si selecciono el codigo y lo ejecuto con Run code, la respuesta en la consola sera:
+    // La promesa se cumplio.
 
 
-const anotherFunction2 = () => {
-    return new Promise((resolve, reject) => {
-        if (false) {
-            resolve("La promesa se cumplio.");
-        } else {
-            reject("La promesa fallo.");
-        }
-    })
-}
 
-anotherFunction2()
-    .then(response => console.log(response))
-    .catch(err => console.log(err))
+/**** EJEMPLO 2 ****/
 
-// Si selecciono el codigo y lo ejecuto con Run code, la respuesta en la consola sera:
-// La promesa fallo.
+    const anotherFunction2 = () => {
+        return new Promise((resolve, reject) => {
+            if (false) {
+                resolve("La promesa se cumplio.");
+            } else {
+                reject("La promesa fallo.");
+            }
+        })
+    }
+
+    anotherFunction2()
+        .then(response => console.log(response))
+        .catch(err => console.log(err))
+
+    // Si selecciono el codigo y lo ejecuto con Run code, la respuesta en la consola sera:
+    // La promesa fallo.
 
 
 /**
