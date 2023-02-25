@@ -11,5 +11,6 @@
     "ECMAScript"
   ],
   "author": "Felipe Muñoz <analista.felipe.m@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module"
 }
