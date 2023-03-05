@@ -3,6 +3,7 @@
 ## Índice
 * [ES8: object entries y object values](#id1)
 * [ES8: string padding y trailing commas](#id2)
+* [ES8: funciones asíncronas](#id3)
 
 ------------
 
@@ -99,5 +100,30 @@ const nombres = [
     "Jhesly", //<-- Trailing comma
  ]
  ````
+
+------------
+
+## ES8: funciones asíncronas [21/35]<a name="id3"></a>
+En ECMAScript 2017 o ES8 fue añadida una nueva forma de manejar el asincronismo en JavaScript mediante funciones asíncronas.
+
+### Cómo utilizar funciones asíncronas
+La función asíncrona se crea mediante la palabra reservada async y retorna una promesa.
+````javascript
+async function asyncFunction () {...}
+
+const asyncFunction = async () => { ... } 
+````
+La palabra reservada await significa que espera hasta que una promesa sea resuelta y solo funciona dentro de una función asíncrona. Los bloques try / catch sirven para manejar si la promesa ha sido resuelta o rechazada.
+````javascript
+async function asyncFunction () {
+	try {
+		const response = await promesa()
+		return response
+	} catch (error) {
+		return error
+	}
+}
+````
+¿Cuál es la mejor forma de manejar promesas, then o async / await? Ambas son muy útiles, manejar ambas te hará un mejor desarrollador.
 
 ------------
