@@ -2,6 +2,7 @@
 
 ## Índice
 * [ES10: flat-map y trimStart-trimEnd](#id1)
+* [ES10: try catch y fromEntries](#id2)
 
 ------------
 
@@ -78,6 +79,49 @@ const result3 = saludo.trimEnd()
 result1 // 'hola'
 result2 // 'hola      '
 result3 // '      hola'
+````
+
+------------
+
+## ES10: try catch y fromEntries [25/35]<a name="id2"></a>
+Las siguientes características de ES10 o ES2019 que aprenderás son: parámetro opcional de catch y un método para tranformar arrays a objetos
+
+### Parámetro opcional de catch
+El parámetro opcional de catch permite omitir el error si es necesario.
+````javascript
+try {
+  // Manejar el código
+} catch (err) {
+  // Se utiliza el parámetro `err`
+}
+
+try {
+  // Manejar el código
+} catch {
+  // Manejar el error sin el parámetro.
+}
+````
+Aunque siempre es recomendable manejar el error como parámetro, ya que tiene más información del problema.
+
+### Cómo transformar un array de arrays en un objeto
+El método Object.fromEntries devuelve un objeto a partir de un array donde sus elementos son las entries en forma [propiedad, valor].
+
+Se considera la operación inversa de Object.entries().
+````javascript
+const arrayEntries = [
+  [ 'name', 'Andres' ],
+  [ 'email', 'andres@correo.com' ],
+  [ 'age', 23 ]
+] 
+
+const usuario = Object.fromEntries(arrayEntries) 
+
+console.log(usuario)
+/* {
+  name: 'Andres',
+  email: 'andres@correo.com',
+  age: 23
+} */
 ````
 
 ------------
