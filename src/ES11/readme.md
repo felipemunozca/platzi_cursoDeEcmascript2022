@@ -4,6 +4,7 @@
 * [ES11: optional chaining](#id1)
 * [ES11: BigInt y Nullish](#id2)
 * [ES11: Promise.allSettled](#id3)
+* [ES11: globalThis y matchAll](#id4)
 
 ------------
 
@@ -137,5 +138,63 @@ Promise.allSettled([promesa1, promesa2, promesa3])
 ````
 ¿Debería usar Promise.allSettled en lugar de Promise.all? 
 No, porque ambas son muy útiles dependiendo cómo quieras manejar tus promesas.
+
+------------
+
+## ES11: globalThis y matchAll [29/35]<a name="id4"></a>
+Las siguientes características de ES2020 que aprenderás son: el objeto global para cualquier plataforma y el método matchAll para expresiones regulares.
+
+### Objeto global para cualquier plataforma
+El motor de JavaScript, aquel que compila tu archivo y lo convierte en código que entiende el computador, al iniciar la compilación crea un objeto global.
+
+El objeto global proporciona funciones y variables propias e integradas en el lenguaje o el entorno. Dependiendo la plataforma, este objeto global tendrá un nombre diferente.
+
+En el navegador el objeto global es window, para Node.js es global, y así para cada entorno. Sin embargo, en Node.js no podrás acceder a window, ni en el navegador podrás acceder a global.
+
+Para estandarizar el objeto global se creó globalThis, un objeto compatible para cualquier plataforma.
+````javascript
+// Ejecuta el siguiente código y observa que muestra
+console.log(window)
+console.log(globalThis)
+
+// En el navegador
+window === globalThis // true
+
+// En Node.js
+global === globalThis // true
+````
+### Método matchAll para expresiones regulares
+El método matchAll de los strings devuelve un iterable con todas las coincidencias del string específico a partir de una expresión regular, colocada como argumento.
+````javascript
+string.matchAll(regex)
+````
+En el iterable, existe una propiedad denominada index con el índice del string donde la búsqueda coincide.
+````javascript
+const regex = /\b(Apple)+\b/g
+
+const fruit = "Apple, Banana, Kiwi, Apple, Orange, etc. etc. etc."
+
+// Tranformación del iterable retornado a array
+const array = [...fruit.matchAll(regex)]
+console.log(array)
+/*
+[
+  [
+    'Apple',
+    'Apple',
+    index: 0,
+    input: 'Apple, Banana, Kiwi, Apple, Orange, etc. etc. etc.',
+    groups: undefined
+  ],
+  [
+    'Apple',
+    'Apple',
+    index: 21,
+    input: 'Apple, Banana, Kiwi, Apple, Orange, etc. etc. etc.',
+    groups: undefined
+  ]
+]
+*/
+````
 
 ------------
