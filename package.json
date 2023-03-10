@@ -12,5 +12,8 @@
   ],
   "author": "Felipe Muñoz <analista.felipe.m@gmail.com>",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  }
 }
