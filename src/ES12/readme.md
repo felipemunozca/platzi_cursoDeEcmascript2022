@@ -2,6 +2,7 @@
 
 ## Índice
 * [ES12: numeric-separators y replaceAll](#id1)
+* [ES12: promise-any y métodos privados](#id2)
 
 ------------
 
@@ -42,6 +43,41 @@ mensaje.replaceAll("JavaScript", "Python")
 
 mensaje.replaceAll(/a/g, "*")
 // 'J*v*Script es m*r*villoso, con J*v*Script puedo cre*r el futuro de l* web.'
+````
+
+------------
+
+## ES12: promise-any y métodos privados [32/35]<a name="id2"></a>
+Las siguientes características de ES12 o ES2021 que aprenderás son: métodos privados en clases y Promise.any.
+
+### Métodos privados de clases
+Los métodos privados consiste en limitar el acceso a propiedades y métodos agregando el caracter numeral ( #). Por defecto, las propiedades y métodos de una clase en JavaScript son públicas, es decir, se puede acceder a ellos fuera de la clase.
+````javascript
+class Clase {
+	#private(valor){
+		console.log(valor)
+	}
+
+	public(valor){
+		console.log(valor)
+	}
+}
+
+const clase = new Clase()
+clase.public("Hola")  // 'Hola'
+clase.private("Hola") // TypeError: clase.private is not a function
+````
+### Promise.any
+Promise.any() es otra forma de manejar varias promesas, que retornará la primera promesa que sea resuelta y rebotará si todas las promesas son rechazadas.
+````javascript
+const promesa1 = Promise.reject("Ups promesa 1 falló")
+const promesa2 = Promise.reject("Ups promesa 2 falló")
+const promesa3 = Promise.resolve("Promesa 3")
+
+
+Promise.any([promesa1, promesa2, promesa3])
+    .then(respuesta => console.log(respuesta)) // Promise 3
+    .catch(error => console.log(error))
 ````
 
 ------------
