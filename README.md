@@ -2,6 +2,9 @@
 
 Escuela Desarrollo Web.
 
-Ruta: JavaScript a Profundidad
+**Rutas:**
+* JavaScript a Profundidad
+* Full Stack Developer con JavaScript
+* Backend con Node.js
 
 Curso impartido por el profesor: Oscar Barajas.
